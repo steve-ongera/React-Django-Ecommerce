@@ -14,11 +14,13 @@ class ProductSerializer(serializers.ModelSerializer):
         queryset=Category.objects.all(), source="category", write_only=True
     )
 
+    main_image = serializers.ImageField(use_url=True)
+
     class Meta:
         model = Product
         fields = [
             "id", "name", "slug", "description", "price", "stock", 
-            "is_active", "created_at", "updated_at", "category", "category_id"
+            "is_active", "created_at", "updated_at", "category", "category_id" ,  "main_image", "sub_image1", "sub_image2"
         ]
 
 
