@@ -38,6 +38,11 @@ class Product(TimeStampedModel):
     stock = models.PositiveIntegerField()
     is_active = models.BooleanField(default=True)
 
+    # New image fields
+    main_image = models.ImageField(upload_to='products/main/', blank=True, null=True)
+    sub_image1 = models.ImageField(upload_to='products/sub/', blank=True, null=True)
+    sub_image2 = models.ImageField(upload_to='products/sub/', blank=True, null=True)
+
     class Meta:
         ordering = ["-created_at"]
 
